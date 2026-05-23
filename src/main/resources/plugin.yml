@@ -1,4 +1,4 @@
 name: 3c3uMetaPlugin
-version: 1.0.0-RELEASE
+version: 1.0.1-SNAPSHOT
 main: org.cccuuu.cccuuuMetaPlugin
 type: META_PLUGIN
