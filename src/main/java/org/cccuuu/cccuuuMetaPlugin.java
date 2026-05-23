@@ -2,9 +2,7 @@ package org.cccuuu;
 
 import org.cccuuu.eventListeners.PrivateChatMessageListener;
 import org.cccuuu.eventListeners.PublicChatMessageListener;
-import org.cccuuu.listeners.AutoLoginListener;
-import org.cccuuu.listeners.ClientListenerWrapper;
-import org.cccuuu.listeners.PositionInQueueListener;
+import org.cccuuu.listeners.*;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.GameMode;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundLoginPacket;
 import xin.bbtt.mcbot.Bot;
@@ -30,6 +28,7 @@ public class cccuuuMetaPlugin implements MetaPlugin {
         Bot.INSTANCE.addPacketListener(new ClientListenerWrapper(), this);
         Bot.INSTANCE.addPacketListener(new AutoLoginListener(), this);
         Bot.INSTANCE.addPacketListener(new PositionInQueueListener(), this);
+        Bot.INSTANCE.addPacketListener(new PingPacketListener(), this);
         Bot.INSTANCE.getPluginManager().events().registerEvents(new PublicChatMessageListener(), this);
         Bot.INSTANCE.getPluginManager().events().registerEvents(new PrivateChatMessageListener(), this);
     }
