@@ -1,5 +1,7 @@
 package org.cccuuu;
 
+import org.cccuuu.eventListeners.PrivateChatMessageListener;
+import org.cccuuu.eventListeners.PublicChatMessageListener;
 import org.cccuuu.listeners.AutoLoginListener;
 import org.cccuuu.listeners.ClientListenerWrapper;
 import org.cccuuu.listeners.PositionInQueueListener;
@@ -28,6 +30,8 @@ public class cccuuuMetaPlugin implements MetaPlugin {
         Bot.INSTANCE.addPacketListener(new ClientListenerWrapper(), this);
         Bot.INSTANCE.addPacketListener(new AutoLoginListener(), this);
         Bot.INSTANCE.addPacketListener(new PositionInQueueListener(), this);
+        Bot.INSTANCE.getPluginManager().events().registerEvents(new PublicChatMessageListener(), this);
+        Bot.INSTANCE.getPluginManager().events().registerEvents(new PrivateChatMessageListener(), this);
     }
 
     @Override
