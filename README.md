@@ -5,16 +5,16 @@
 <!-- Badges -->
 <p>
   <a href="https://github.com/huangdihd/3c3uMetaPlugin/releases" target="_blank">
-    <img src="https://img.shields.io/github/v/release/huangdihd/XinMetaPlugin?style=for-the-badge&label=Release&color=brightgreen" alt="Latest Release">
+    <img src="https://img.shields.io/github/v/release/huangdihd/3c3uMetaPlugin?style=for-the-badge&label=Release&color=brightgreen" alt="Latest Release">
   </a>
   <a href="https://github.com/huangdihd/3c3uMetaPlugin/issues" target="_blank">
-    <img src="https://img.shields.io/github/issues/huangdihd/XinMetaPlugin?style=for-the-badge&label=Issues&color=yellow" alt="Issues">
+    <img src="https://img.shields.io/github/issues/huangdihd/3c3uMetaPlugin?style=for-the-badge&label=Issues&color=yellow" alt="Issues">
   </a>
   <a href="https://github.com/huangdihd/3c3uMetaPlugin/blob/main/LICENSE" target="_blank">
-    <img src="https://img.shields.io/github/license/huangdihd/XinMetaPlugin?style=for-the-badge&label=License&color=blue" alt="License">
+    <img src="https://img.shields.io/github/license/huangdihd/3c3uMetaPlugin?style=for-the-badge&label=License&color=blue" alt="License">
   </a>
   <a href="https://github.com/huangdihd/3c3uMetaPlugin/stargazers" target="_blank">
-    <img src="https://img.shields.io/github/stars/huangdihd/XinMetaPlugin?style=for-the-badge&label=Stars&color=ff69b4" alt="Stars">
+    <img src="https://img.shields.io/github/stars/huangdihd/3c3uMetaPlugin?style=for-the-badge&label=Stars&color=ff69b4" alt="Stars">
   </a>
 </p>
 
