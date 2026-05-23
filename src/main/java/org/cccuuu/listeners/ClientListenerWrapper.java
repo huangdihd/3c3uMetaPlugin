@@ -8,6 +8,7 @@ import org.geysermc.mcprotocollib.network.event.session.SessionListener;
 import org.geysermc.mcprotocollib.network.packet.Packet;
 import org.geysermc.mcprotocollib.protocol.ClientListener;
 import org.geysermc.mcprotocollib.protocol.packet.login.clientbound.ClientboundHelloPacket;
+import xin.bbtt.mcbot.Bot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,12 +41,11 @@ class ClientListenerProxy extends SessionAdapter {
     public void packetReceived(Session s, Packet packet) {
         if (packet instanceof ClientboundHelloPacket helloPacket) {
             if (helloPacket.isShouldAuthenticate()) {
-
                 ClientboundHelloPacket modifiedHello = new ClientboundHelloPacket(
                         helloPacket.getServerId(),
                         helloPacket.getPublicKey(),
                         helloPacket.getChallenge(),
-                        false
+                        Bot.INSTANCE.getConfig().getConfigData().getAccount().isOnlineMode()
                 );
                 originClientListener.packetReceived(s, modifiedHello);
                 return;
