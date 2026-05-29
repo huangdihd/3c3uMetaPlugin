@@ -48,6 +48,8 @@ public class cccuuuMetaPlugin implements MetaPlugin {
 
     @Override
     public void onEnable() {
+        loginFlow.reset();
+
         Bot.INSTANCE.addPacketListener(loginFlow, this);
         Bot.INSTANCE.addPacketListener(new ClientListenerWrapper(), this);
         Bot.INSTANCE.addPacketListener(new PositionInQueueListener(), this);
@@ -68,6 +70,7 @@ public class cccuuuMetaPlugin implements MetaPlugin {
     @Override
     public Server getServer(ClientboundLoginPacket loginPacket) {
         if (loginPacket.getCommonPlayerSpawnInfo().getGameMode() == GameMode.ADVENTURE) {
+            loginFlow.reset();
             return Server.Login;
         }
         return Server.Game;
