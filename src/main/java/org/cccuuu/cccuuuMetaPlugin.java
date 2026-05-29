@@ -17,11 +17,6 @@ import java.net.SocketAddress;
 
 public class cccuuuMetaPlugin implements MetaPlugin {
     private LoginFlow loginFlow;
-    private static boolean login = false;
-
-    public static boolean isLogin() {
-        return login;
-    }
 
     @Override
     public void onLoad() {
@@ -49,7 +44,6 @@ public class cccuuuMetaPlugin implements MetaPlugin {
                     .then("l {password}")
                     .login()
                     .successWhen(p -> Utils.toString(p.getContent()).contains("§2§l成功登录!"))
-                    .onSuccess(p -> login = true)
                     .add()
                 .cooldown(2000)
                 .build();
