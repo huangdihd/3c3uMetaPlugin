@@ -7,7 +7,10 @@ import org.cccuuu.listeners.*;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.GameMode;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundLoginPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundSystemChatPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import xin.bbtt.mcbot.Bot;
+import xin.bbtt.mcbot.LangManager;
 import xin.bbtt.mcbot.Server;
 import xin.bbtt.mcbot.Utils;
 import xin.bbtt.mcbot.LoginFlow.LoginFlow;
@@ -17,6 +20,8 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 
 public class cccuuuMetaPlugin implements MetaPlugin {
+    private static final Logger log = LoggerFactory.getLogger(cccuuuMetaPlugin.class.getSimpleName());
+
     @Getter
     private static final LoginFlow loginFlow = LoginFlow.builder(Bot.INSTANCE::sendCommand)
             .eventManager(Bot.INSTANCE.getPluginManager().events())
@@ -33,13 +38,14 @@ public class cccuuuMetaPlugin implements MetaPlugin {
                 .then("l {password}")
                 .login()
                 .successWhen(p -> Utils.toString(p.getContent()).contains("§2§l成功登录!"))
+                .onSuccess(p -> log.info(LangManager.get("cccuuu.login.successful")))
                 .add()
             .cooldown(2000)
             .build();
 
     @Override
     public void onLoad() {
-        // LangManager.initLang(cccuuuMetaPlugin.class.getClassLoader());
+        LangManager.initLang(cccuuuMetaPlugin.class.getClassLoader());
     }
 
     @Override
